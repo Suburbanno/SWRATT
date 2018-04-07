@@ -1,0 +1,6 @@
+telepot
+winshell
+pillow
+requests
+wheel
+pycrypto
