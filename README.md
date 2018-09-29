@@ -1,8 +1,5 @@
 <p align="center">
 <img src="https://a.imagem.app/Kemhb.png" width="140" alt="TelegramRAT"></p>
-<h1 align="center">TelegramRAT</h1>
-
-
 
 ## Compiling
 ```
