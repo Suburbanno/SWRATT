@@ -4,3 +4,4 @@ requests==2.20.0
 telepot==12.7
 winshell==0.6
 wheel==0.34.2
+PyInstaller==3.6
