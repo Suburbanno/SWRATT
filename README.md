@@ -1,6 +1,3 @@
-<p align="center">
-<img src="https://a.imagem.app/Kemhb.png" width="140" alt="TelegramRAT"></p>
-
 ## SWRATT
  A simple Windows Remote Administration Tool using Telegram bot function.
 
@@ -20,7 +17,7 @@
 
 ## Installation & Usage:
 
-- Clone this repository.
+- Clone this repository: `git clone https://github.com/Suburbanno/SWRATT.git`
 - Set up a new Telegram bot talking to the `@BotFather`.
 - Copy this token and replace it in `token = "xxxxxxxxxxxxxxx"`.
 - Run `main.py`
