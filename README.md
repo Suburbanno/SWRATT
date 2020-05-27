@@ -49,7 +49,7 @@
 - `-F` Compiles the file in .exe
 
 ## Contributing:
-Contributions and feature requests are welcome!<br />Feel free to open a [issue](https://github.com/Suburbanno/TelegramRAT/issues) or [pull request](https://github.com/Suburbanno/TelegramRAT/pulls).
+Contributions and feature requests are welcome!<br />Feel free to open a [issue](https://github.com/Suburbanno/SWRATT/issues) or [pull request](https://github.com/Suburbanno/SWRATT/pulls).
 
 ## Disclaimer:
 
@@ -57,4 +57,4 @@ Contributions and feature requests are welcome!<br />Feel free to open a [issue]
 
 ## License:
 
-[The MIT License](https://github.com/Suburbanno/TelegramRAT/blob/master/LICENSE)
+[The MIT License](https://github.com/Suburbanno/SWRATT/blob/master/LICENSE)
