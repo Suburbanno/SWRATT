@@ -21,7 +21,9 @@
 - Set up a new Telegram bot talking to the `@BotFather`.
 - Copy this token and replace it in `token = "xxxxxxxxxxxxxxx"`.
 - Run `main.py`
-  - Copy your `chat_id` from the console and replace it in `trusted_users = [xxxxx]`
+  - Copy your `chat_id` from the console and replace it in `trusted_users = [xxxxx]` and group id in `trusted_chats = [-xxxxx]`if you need.
+  - You have the option to get your id and the group id through this `@my_id_bot` bot, for that you must put the bot in a group exists or create a test group
+  <img src="https://i.imgur.com/579fkJG.jpg"/>
 - Go to your bot on telegram and send `/help` command to the bot to test it.
 
 ### Commands:
