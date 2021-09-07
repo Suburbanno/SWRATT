@@ -1,4 +1,4 @@
-Pillow==8.1.1
+Pillow==8.3.2
 pywin32==227
 requests==2.20.0
 telepot==12.7
