@@ -3,5 +3,5 @@ pywin32==301
 requests==2.20.0
 telepot==12.7
 winshell==0.6
-wheel==0.34.2
+wheel==0.38.1
 PyInstaller==3.6
