@@ -1,5 +1,6 @@
 Pillow==9.0.0
 pywin32==301
+pynput==1.7.6
 requests==2.20.0
 telepot==12.7
 winshell==0.6
